@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>StudentSwap</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg?v=2">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+  <div id="app">
+    <!-- Шапка -->
+    <header class="header">
+      <div class="header-brand">
+        <img class="logo" src="logo.svg?v=2" alt="StudentSwap">
+        <div>
+          <div class="brand-name">StudentSwap</div>
+          <div class="brand-tagline">Обменяйся с теми, кто рядом</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-notifications" title="Уведомления">
+        <span id="bell-icon" data-icon="bell"></span><span class="badge hidden" id="notif-badge"></span>
+      </button>
+    </header>
+
+    <!-- Контент -->
+    <main id="view"></main>
+
+    <!-- Нижняя навигация -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-view="feed"><span data-icon="home"></span>Лента</button>
+      <button class="nav-btn" data-view="map"><span data-icon="map"></span>Карта</button>
+      <button class="nav-btn nav-add" data-view="add"><span data-icon="plus"></span></button>
+      <button class="nav-btn" data-view="wants"><span data-icon="sparkle"></span>Хочу</button>
+      <button class="nav-btn" data-view="profile"><span data-icon="user"></span>Профиль</button>
+    </nav>
+  </div>
+
+  <!-- Модалка -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/api.js?v=2"></script>
+  <script src="js/icons.js?v=2"></script>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>
