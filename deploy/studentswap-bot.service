@@ -1,0 +1,14 @@
+[Unit]
+Description=StudentSwap Telegram bot
+After=network.target studentswap-api.service
+
+[Service]
+User=studentswap
+Group=studentswap
+WorkingDirectory=/opt/studentswap/backend
+ExecStart=/opt/studentswap/backend/.venv/bin/python bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

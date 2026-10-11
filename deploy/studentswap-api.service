@@ -1,0 +1,15 @@
+[Unit]
+Description=StudentSwap API (uvicorn)
+After=network.target
+
+[Service]
+User=studentswap
+Group=studentswap
+WorkingDirectory=/opt/studentswap/backend
+ExecStart=/opt/studentswap/backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=3
+# Читает переменные из backend/.env через app/config.py
+
+[Install]
+WantedBy=multi-user.target
